@@ -7,10 +7,17 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-First Create a database on your SQL and then import the database from this directory.
-usercontroller.sql and then change the .env.example and there ya go done.
 
+
+FIRST DO
 run
 ```bash
+git clone https://github.com/RealSyferX/loginregisterlaravel.git
+cd ./loginregisterlaravel
+```
+
+Now Create a database on your SQL and then import the database from this directory.
+usercontroller.sql and then change the .env.example and there ya go done.
+```cpp
 php artisan serve
 ```
