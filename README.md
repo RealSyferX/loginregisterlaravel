@@ -21,3 +21,5 @@ usercontroller.sql and then change the .env.example and there ya go done.
 ```cpp
 php artisan serve
 ```
+
+There ya go this is complete guide lmao
