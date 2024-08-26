@@ -19,7 +19,7 @@
         <div style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 24px;">
             <header style="text-align: center; margin-bottom: 16px;">
                 <h2 style="font-size: 24px; font-weight: bold; text-transform: uppercase; margin: 0;">Login</h2>
-                <p style="color: #4a5568;">Gogogogo</p>
+                <p style="color: #4a5568;">WOI!</p>
             </header>
 
             <form method="POST" action="/login/done">
