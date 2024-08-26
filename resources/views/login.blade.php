@@ -1,11 +1,25 @@
 @extends('layout')
 
 @section('content')
+    <div style="background-color: #333; padding: 16px;">
+        <nav style="max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <div style="color: #ffffff; font-size: 24px; font-weight: bold;">
+                MyWebsite
+            </div>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li style="margin-right: 16px;"><a href="/" style="color: #ffffff; text-decoration: none;">Home</a></li>
+                <li style="margin-right: 16px;"><a href="/about" style="color: #ffffff; text-decoration: none;">About</a></li>
+                <li style="margin-right: 16px;"><a href="/contact" style="color: #ffffff; text-decoration: none;">Contact</a></li>
+                <li><a href="/login" style="color: #ffffff; text-decoration: none;">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <div style="max-width: 800px; margin: 0 auto; padding: 16px;">
         <div style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 24px;">
             <header style="text-align: center; margin-bottom: 16px;">
                 <h2 style="font-size: 24px; font-weight: bold; text-transform: uppercase; margin: 0;">Login</h2>
-                <p style="color: #4a5568;">Login to post gigs</p>
+                <p style="color: #4a5568;">Gogogogo</p>
             </header>
 
             <form method="POST" action="/login/done">

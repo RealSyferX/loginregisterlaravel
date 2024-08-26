@@ -5,7 +5,7 @@
         <div style="background-color: #f7fafc; border: 1px solid #e2e8f0; padding: 40px; border-radius: 8px; margin-top: 96px;">
             <header style="text-align: center; margin-bottom: 24px;">
                 <h2 style="font-size: 24px; font-weight: bold; text-transform: uppercase; margin: 0 0 8px 0;">Register</h2>
-                <p>Create an account to post gigs</p>
+                <p>Create an account if you got infected by corona virus</p>
             </header>
 
             <form method="POST" action="/users">
