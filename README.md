@@ -21,3 +21,18 @@ usercontroller.sql and then change the .env.example and there ya go done.
 ```cpp
 php artisan serve
 ```
+
+
+Here some extra code if you need it lol
+```batch
+reinstall
+=-=-----=-=-=
+rm -rf vendor composer.lock
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+```

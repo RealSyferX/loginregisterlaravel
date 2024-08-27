@@ -4,7 +4,7 @@
     <div style="background-color: #333; padding: 16px;">
         <nav style="max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
             <div style="color: #ffffff; font-size: 24px; font-weight: bold;">
-                MyWebsite
+                JointTable
             </div>
             <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
                 <li style="margin-right: 16px;"><a href="/" style="color: #ffffff; text-decoration: none;">Home</a></li>
@@ -39,6 +39,16 @@
                     <p style="color: #e53e3e; font-size: 12px; margin-top: 8px;">{{ $message }}</p>
                     @enderror
                 </div>
+
+
+{{--                <div style="margin-bottom: 24px;">--}}
+{{--                    <label for="address" style="display: block; font-size: 16px; margin-bottom: 8px;">Full Address (Including Postal Code)</label>--}}
+{{--                    <input type="address" id="address" name="address" style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 4px;" value="{{ old('address') }}" required>--}}
+{{--                    @error('address')--}}
+{{--                    <p style="color: #e53e3e; font-size: 12px; margin-top: 8px;">{{ $message }}</p>--}}
+{{--                    @enderror--}}
+{{--                </div>--}}
+
 
                 <div style="margin-bottom: 24px;">
                     <label for="password" style="display: block; font-size: 16px; margin-bottom: 8px;">Password</label>
