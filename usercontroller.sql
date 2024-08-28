@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 19, 2024 at 02:27 AM
+-- Generation Time: Aug 28, 2024 at 02:38 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.3.10
 
@@ -24,22 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
---
-
-CREATE TABLE `failed_jobs` (
-  `id` bigint UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `migrations`
 --
 
@@ -49,46 +33,31 @@ CREATE TABLE `migrations` (
   `batch` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_reset_tokens`
+-- Table structure for table `product_list`
 --
 
-CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
+CREATE TABLE `product_list` (
+  `id` int NOT NULL,
+  `product_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `product_img` varchar(255) NOT NULL,
+  `price` int NOT NULL,
+  `quantity` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Table structure for table `personal_access_tokens`
+-- Dumping data for table `product_list`
 --
 
-CREATE TABLE `personal_access_tokens` (
-  `id` bigint UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tokenable_id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
-  `last_used_at` timestamp NULL DEFAULT NULL,
-  `expires_at` timestamp NULL DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO `product_list` (`id`, `product_name`, `product_img`, `price`, `quantity`) VALUES
+(1, 'K.', 'product_images/tDk2RXfpwNJ1dIaiAoSsXXyOXW6TnH5q3fn5bQNF.webp', 111, 11),
+(3, 'DAM', 'product_images/koAMDldUSkaSogXe7KsTqsko9oI8Oh6Q5GFZPSto.webp', 40, 1337),
+(4, 'FlyE', 'product_images/B3UssDa6xTLTwK9YrR3AwSvVTlnSJczls3rYI2Gc.webp', 30, 12629),
+(5, 'Ketamine', 'product_images/RpGdd0Ku5wLfzhA9oHDbvArs1eZ0hRmxhV3DkcgL.webp', 140, 49),
+(6, 'CISA/NSA Hacking Tool', 'product_images/kT6kvxsph5LiCZlY7OOSHNaXqV7pb67njPtV64OS.webp', 7980000, 5),
+(7, 'hehe', 'product_images/F51mb8HUtDAvsFpbdS0iH5bthvHpUa4ZDLDUNnAC.jpg', 11, 232);
 
 -- --------------------------------------------------------
 
@@ -120,6 +89,7 @@ INSERT INTO `user` (`name`, `email`, `password`, `remember_token`, `email_verifi
 CREATE TABLE `users` (
   `id` bigint UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -132,21 +102,15 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'aaa@aa.aa', 'aaa@aa.aa', NULL, '$2y$12$Q.t68ZaPhJepwU/gsXf8X.dyooXUtX0.Zq7ZmefsujxkrV7U72NbC', NULL, '2024-08-18 18:12:22', '2024-08-18 18:12:22'),
-(2, '123@123.123', '123@123.123', NULL, '$2y$12$0n6MehOobHhsCyfy/FAvsOfXGAoaGXtN60wDHTZQf7wwOSVz4nSpG', NULL, '2024-08-18 18:13:55', '2024-08-18 18:13:55'),
-(4, 'abc', 'abc@abc.abc', NULL, '$2y$12$3RYZRooHZD5tGYqvCJlhE.QPSGaNRzUVoLMGCCxEk4vtXPKgcSIDO', NULL, '2024-08-18 18:15:48', '2024-08-18 18:15:48');
+INSERT INTO `users` (`id`, `name`, `address`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'aaa@aa.aa', NULL, 'aaa@aa.aa', NULL, '$2y$12$Q.t68ZaPhJepwU/gsXf8X.dyooXUtX0.Zq7ZmefsujxkrV7U72NbC', NULL, '2024-08-18 18:12:22', '2024-08-18 18:12:22'),
+(2, '123@123.123', NULL, '123@123.123', NULL, '$2y$12$0n6MehOobHhsCyfy/FAvsOfXGAoaGXtN60wDHTZQf7wwOSVz4nSpG', NULL, '2024-08-18 18:13:55', '2024-08-18 18:13:55'),
+(4, 'abc', NULL, 'abc@abc.abc', NULL, '$2y$12$3RYZRooHZD5tGYqvCJlhE.QPSGaNRzUVoLMGCCxEk4vtXPKgcSIDO', NULL, '2024-08-18 18:15:48', '2024-08-18 18:15:48'),
+(7, 'awawd@ffr2.21', NULL, 'awawd@ffr2.21', NULL, '$2y$12$e9Ey4FZ3sb58Uvz3u6j4uuwtPfJxgycS9PRTAGvFBNccHSQryv5L2', NULL, '2024-08-25 22:51:47', '2024-08-25 22:51:47');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
 -- Indexes for table `migrations`
@@ -155,18 +119,10 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_reset_tokens`
+-- Indexes for table `product_list`
 --
-ALTER TABLE `password_reset_tokens`
-  ADD PRIMARY KEY (`email`);
-
---
--- Indexes for table `personal_access_tokens`
---
-ALTER TABLE `personal_access_tokens`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
-  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+ALTER TABLE `product_list`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -180,28 +136,22 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT for table `product_list`
 --
-ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `product_list`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
