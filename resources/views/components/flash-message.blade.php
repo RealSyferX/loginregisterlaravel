@@ -1,7 +1,4 @@
-
 <style>
-   
-
     .message-box {
         top: 10%;
         position: absolute;
@@ -41,12 +38,12 @@
     }
 </style>
 
-@if(session()->has('message'))
-<div class="message-box">
-    <h2>Alert message</h2>
-    <p>{{ session("message") }}</p>
-    <button class="close-button" onclick="closeMessageBox()">Close</button>
-</div>
+@if(session('message'))
+    <div class="message-box">
+        <h2>{{ session('title','Alert Message') }}</h2> <!-- Default to 'Woohoo' if title isn't set -->
+        <p>{{ session('message') }}</p>
+        <button class="close-button" onclick="closeMessageBox()">Close</button>
+    </div>
 @endif
 
 <script>

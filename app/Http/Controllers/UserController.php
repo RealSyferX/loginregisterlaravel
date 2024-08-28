@@ -34,16 +34,32 @@ class UserController extends Controller
 
     public function createUser(Request $request)
     {
+
+        $niggacheck = $request->validate([
+            "email" => "required",
+            "password" => "required",
+        ]);
+
         $formFields = $request->validate([
             "name" => "required",
             //"address" => ["required", "address"],
             "email" => ["required", "email"],
             "password" => "required|confirmed"
         ]);
+        if (!auth()->attempt($niggacheck)) {
+            User::create($formFields);
+            return redirect("/login/")->with([
+                "message" => "Register Success, now try login",
+                "title" => "Yeah Yeah Let's Login"
+            ]);
 
-        User::create($formFields);
+        }else
+            return redirect("/register/")->with([
+                "message" => "It's seems the email already registered.",
+                "title" => "NIGGA LET'S DANCE"
+            ]);
+           // return redirect("/register")->with("message", "It's seems the email already registered.");
 
-        return redirect("/login/")->with("message", "Register Success, now try login");
     }
     public function yeslogin(Request $request)
     {
@@ -54,14 +70,22 @@ class UserController extends Controller
 
         if (auth()->attempt($formFields)) {
             //$products = Product::all();
-            return redirect("/shop")->with("message", "Login Success, lol");
-
+            //return redirect("/shop")->with("message", "Login Success, lol");
+            return redirect("/shop/")->with([
+                "message" => "Login Success",
+                "title" => "lol"
+            ]);
 
             // Pass the products to the view
             //return view('shop', ['products' => $products]);
             //return back()->with("message", "Login Success, welcome");
         }else{
-            return redirect("/login/")->with("message", "your email and password is wrong nigga, perhaps you need seek help from eye doctor");
+            //return redirect("/login/")->with("message", "your email and password is wrong nigga, perhaps you need seek help from eye doctor");
+            return redirect("/login/")->with([
+                "message" => "your email and password is wrong nigga, perhaps you need seek help from eye doctor
+                or brain replacement.",
+                "title" => "Sum Ting Wong"
+            ]);
         }
     }
 

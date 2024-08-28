@@ -24,8 +24,12 @@
         @yield('content')
 
     </div>
-    <x-flash-message />
 
+{{--    located : resources/views/components/flash-message.blade.php--}}
+{{--    php artisan make:component FlashMessage--}}
+
+    <x-flash-message />
+{{--=-=-=-=-=-=-=-=-=-=-=-=---}}
 
 </body>
 </html>
