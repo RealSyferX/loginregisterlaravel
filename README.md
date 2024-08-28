@@ -11,7 +11,7 @@
 # For those who use this 
 ```
 This project are not serious, and alot shitty code.. yes it works..
-sooner or later i will rework the entire thing and clean and organize code
+sooner or later i will rework the entire thing and clean, organize code
 ```
 
 
